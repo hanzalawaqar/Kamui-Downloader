@@ -1,102 +1,88 @@
-KAMUI WEBSITE — QUICK GUIDE (read this!)
-=========================================
+# Kamui Downloader
 
-Files inside this folder:
-  index.html      -> main website page
-  styles.css      -> design/colors/fonts
-  app.js          -> behaviour + DOWNLOAD LINKS (see below)
-  assets/
-    kamui-logo.png-> your app logo (used in header, hero, footer)
-    favicon.svg   -> browser tab icon (K logo)
-    og-image.png  -> social share preview (1200x630)
-    screenshots/  -> PLACEHOLDER screenshots (see section 7)
+**Kamui Downloader is a free Windows video downloader for YouTube and other sites — with a portable EXE, Windows installer and Chrome/Edge extension.**
 
-═══════════════════════════════════════════
-1) ADD YOUR DOWNLOAD LINKS (most important)
-═══════════════════════════════════════════
-Open app.js in Notepad and change ONLY this part:
+[![Latest release](https://img.shields.io/github/v/release/YOUR_USERNAME/Kamui-Downloader?style=for-the-badge)](https://github.com/YOUR_USERNAME/Kamui-Downloader/releases/latest)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D4?style=for-the-badge&logo=windows)](https://github.com/YOUR_USERNAME/Kamui-Downloader/releases/latest)
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/YOUR_USERNAME/Kamui-Downloader?style=for-the-badge)](LICENSE)
 
-  const CONFIG = {
-    version: "v1.1.7",
-    DOWNLOADS: {
-      installer: "#",   <- put your KAMUI-Setup-v1.1.7.exe URL here
-      portable:  "#",   <- put your KAMUI-Portable zip URL here
-      extension: "#",   <- put your extension zip URL here
-    },
-  };
+![Kamui Downloader main window](docs/assets/screenshots/download.png)
 
-Tip: You can also just copy these files INTO your download folder and use
-relative names like installer: "KAMUI-Setup-v1.1.7.exe".
+Kamui Downloader is a desktop app for Windows that downloads videos, playlists, clips and thumbnails from YouTube and other sites supported by yt-dlp. It supports single, multi and playlist downloads, 4K/1080p quality selection, ProRes export, download history, and a Chrome/Edge browser extension.
 
-Save the file and refresh the website — all 4+ download buttons update
-automatically. While a link is still "#", the site shows a small reminder
-toast instead of jumping (this disappears once real URLs are set).
+## Download Kamui Downloader
 
-═══════════════════════════════════════════
-2) CHANGE VERSION NUMBER (after v1.1.7)
-═══════════════════════════════════════════
-Same place: CONFIG.version in app.js. Every badge updates automatically.
-The same CONFIG also holds the file size and release date shown on each
-download card (CONFIG.META). The "Beta" badge text is in index.html.
+| Build | Description | Link |
+|---|---|---|
+| Portable EXE | No installation required | [Download](https://github.com/YOUR_USERNAME/Kamui-Downloader/releases/latest) |
+| Windows Installer | Installs to Program Files | [Download](https://github.com/YOUR_USERNAME/Kamui-Downloader/releases/latest) |
+| Browser Extension | Chrome / Edge / Brave | [Download](https://github.com/YOUR_USERNAME/Kamui-Downloader/releases/latest) |
 
-═══════════════════════════════════════════
-3) HOW TO TEST ON YOUR PC
-═══════════════════════════════════════════
-Double-click index.html — it opens in your browser. That's it.
-(Agar tezayi sa browser ki window mein preview chahiye to browser mein
- drag kar ke index.html drop karein.)
+> The EXEs are attached to GitHub Releases because they are larger than GitHub's 100 MB repository file limit.
 
-═══════════════════════════════════════════
-4) HOW TO PUBLISH ONLINE (free options)
-═══════════════════════════════════════════
-Option A — Netlify Drop (easiest, 1 minute):
-  1. Go to https://app.netlify.com/drop
-  2. Drag the WHOLE kamui-website folder onto the page
-  3. You get a live link like kamui-downloader.netlify.app
+## Features
 
-Option B — GitHub Pages:
-  1. Create a free account, make a repo "kamui-website"
-  2. Upload all files, then Settings -> Pages -> deploy from main branch.
+- Single video, multi-URL, playlist, clip and thumbnail download modes
+- 4K, 1080p, 720p and audio-only quality presets
+- Clip download with ProRes export
+- Download queue, history and smart retry
+- Portable EXE and Inno Setup installer
+- Chrome/Edge extension with page controls and context menu
+- yt-dlp and FFmpeg bundled in the portable build
 
-Option C — apni hosting / cPanel:
-  Upload ALL files from this folder into public_html (ya site ka root folder).
+## Install
 
-═══════════════════════════════════════════
-5) SEO (Google search)
-═══════════════════════════════════════════
-When you have your final domain (e.g. https://kamuidownloader.com):
-  - Replace "example.com" in robots.txt and sitemap.xml with your domain.
-  - Submit the sitemap in Google Search Console.
+### Portable
 
-═══════════════════════════════════════════
-6b) ACCENT COLOURS
-═══════════════════════════════════════════
-The five dots in the header switch the whole site colour and the choice is
-remembered (localStorage key "kamui-accent"). Colours are CSS variables at
-the top of styles.css: the :root block and the [data-accent="..."] blocks.
-To add a colour: add a new [data-accent="name"] block, a button in the header
-(index.html) and the name to ACCENTS in app.js.
+1. Download the portable ZIP from Releases.
+2. Extract it.
+3. Run `Kamui Downloader Portable.exe`.
 
-═══════════════════════════════════════════
-7) REAL SCREENSHOTS
-═══════════════════════════════════════════
-Put your PNG/JPG files in assets/screenshots/ (16:10 ratio looks best) and
-change each <img src="..."> inside the #screenshots section of index.html.
-Captions are the <figcaption> text; the lightbox title is data-title.
-Add or remove <figure class="slide"> blocks freely — dots update automatically.
+### Installer
 
-═══════════════════════════════════════════
-8) PLACEHOLDERS STILL TO FILL
-═══════════════════════════════════════════
-  - Documentation, GitHub, Privacy Policy, Terms (footer; show a "soon" tag
-    and a toast until you give them real hrefs — remove data-placeholder).
-  - example.com in index.html (canonical, og:url, og:image, JSON-LD).
-  - Changelog / "Future updates" box in the Download section.
+1. Download `Kamui-Downloader-Setup-v1.1.7.exe`.
+2. Run it and follow the wizard.
+3. Launch KAMUI from the Start Menu or desktop shortcut.
 
-═══════════════════════════════════════════
-9) EDITING TEXT / COLORS
-═══════════════════════════════════════════
-  All text      -> index.html (plain searchable words)
-  Colors/fonts  -> styles.css top ":root" variables
-                    --a / --a-hi / --a-2 = accent (set per [data-accent])
-                    --bg page background
+### Browser extension
+
+1. Open `chrome://extensions` or `edge://extensions`.
+2. Enable Developer mode.
+3. Click **Load unpacked** and select the `extension` folder.
+
+## Build from source
+
+See [BUILD.md](BUILD.md) for the exact Python 3.13 / PySide6 / PyInstaller / Inno Setup build steps.
+
+## FAQ
+
+### Is Kamui Downloader free?
+
+Yes. The app is free to download and use.
+
+### Does Kamui Downloader work without installation?
+
+Yes. The portable EXE runs without installing anything.
+
+### Which sites are supported?
+
+YouTube and other sites supported by yt-dlp. Support depends on the installed yt-dlp version.
+
+### Does it support 4K and playlists?
+
+Yes, when the source provides 4K formats. Playlist mode downloads multiple videos from a playlist URL.
+
+### Is Kamui Downloader open source?
+
+Yes. The source code is in this repository.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).
+
+## Links
+
+- Website: https://YOUR_USERNAME.github.io/Kamui-Downloader/
+- Releases: https://github.com/YOUR_USERNAME/Kamui-Downloader/releases
+- Issues: https://github.com/YOUR_USERNAME/Kamui-Downloader/issues
