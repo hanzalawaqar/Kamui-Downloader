@@ -9,8 +9,6 @@ KAMUI Downloader is a free, open-source Windows application built around a clean
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-![KAMUI Downloader main window](docs/assets/screenshots/download.png)
-
 ## Features
 
 - **Multiple download modes:** single video, multiple URLs, playlists, clips, and thumbnails.
